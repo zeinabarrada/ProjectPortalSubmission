@@ -133,7 +133,28 @@ namespace ProjectPortalSubmission
 					con.Close();
 			}
 		}
+		[WebMethod]
+		public bool AssignReferee(int project_id, int referee_id)
+		{
+			try
+			{
+				SqlCommand cmd = new SqlCommand("INSERT INTO Referees (ProjectID, RefereeID) VALUES (@project_id, @referee_id)", con);
+				cmd.Parameters.AddWithValue("@project_id", project_id);
+				cmd.Parameters.AddWithValue("@referee_id", referee_id);
 
+				con.Open();
+				int result = cmd.ExecuteNonQuery();
+				return result > 0;
+			}
+			catch
+			{
+				return false;
+			}
+			finally
+			{
+				con.Close();
+			}
+		}
 
 
 	}
