@@ -52,6 +52,7 @@ namespace ProjectPortalSubmission
 					con.Close();
 			}
 		}
+		
 		// Read: Retrieve a single person record by Id
 		[WebMethod]
 		public DataTable GetTheme(int id)
@@ -80,6 +81,7 @@ namespace ProjectPortalSubmission
 					con.Close();
 			}
 		}
+		
 		[WebMethod]
 		public bool ModifyTheme(int id,string theme_name, int duration, string deadline, int budget)
 		{
@@ -108,6 +110,7 @@ namespace ProjectPortalSubmission
 					con.Close();
 			}
 		}
+		
 		// Delete: Remove a Person record
 		[WebMethod]
 		public bool DeleteTheme(int id)
@@ -133,9 +136,6 @@ namespace ProjectPortalSubmission
 					con.Close();
 			}
 		}
-
-
-
 	}
 
 }
